@@ -12,7 +12,7 @@
 首先安装Laravel >= 5.5.0 版本 并保证数据库连接正常
 
 ```
-$ composer require eachdemo/city-linkage
+$ composer require eachdemo/city-linkage:dev-master
 ```
 
 然后运行以下命令来发布城市资源
@@ -25,14 +25,14 @@ $ php artisan migrate
 # 填充表数据
 $ php artisan db:seed --class=CitySeeder
 ```
-
+> 注：`php artisan db:seed --class=CitySeeder` 失败时可以执行先 `composer dump-autoload` 再执行 `php artisan db:seed --class=CitySeeder` 填充
 ### 使用
 
 ------
 
 **实例**
 
-获取城市列表数据 `getData($id)` 参数id为城市id 默认0 即获取所有省份城市
+获取城市列表数据 `getData($id,$filed)` 参数`id`为城市id 默认0 即获取所有省份城市 `filed` 返回数据字段 默认`id,name,parent_id` 
 
 ```
 <?php
