@@ -1,0 +1,26 @@
+{
+    "name": "eachdemo\/city-linkage",
+    "description": "A City Link linkage for china\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b\u001b[3~\u001b[D\u001b[D\u001b[c\u001b[D\u001b[D\u001b[D\u001b[F\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[B\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001bA city linkage for china",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "wuyan",
+            "email": "466720682@qq.com"
+        }
+    ],
+    "require": {},
+    
+    "autoload": {
+        "psr-4": {
+            "Eachdemo\\CityLinkage\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Eachdemo\\CityLinkage\\CityServiceProvider"
+            ]
+        }
+    }
+    
+}
