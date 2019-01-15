@@ -71,9 +71,9 @@ class CityLinkage{
 	/**
 	 * 获取数据键值对数组
 	 */
-	public static function getKeyName($p_id=0){
+	public static function getKeyName(){
 		$data = new Data();
-		return $data->getKeyName($p_id);
+		return $data->getKeyName();
 	}
 
 }

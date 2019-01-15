@@ -53,7 +53,7 @@ class Data{
 	public function recycleOne($id){
 		$one = (array)DB::table('city_linkage')->where('id','=',$id)->first();
 		if(empty($one)) return 'error';
-		DB::table('city_linkage')->where('id','=',$id)->update(['parent_id'=>($one['parent_id']*-1)]);
+		return DB::table('city_linkage')->where('id','=',$id)->update(['parent_id'=>($one['parent_id']*-1)]);
 	}
 
 	/**
@@ -75,21 +75,16 @@ class Data{
 	public function dltRecycleOne($id){
 		$one = DB::table('city_linkage')->where('id','=',$id)->first();
 		if(empty($one) || $one->parent_id >= 0) return 'error';
-		DB::table('city_linkage')->where('id','=',$id)->delete();
-		return true;
+		return DB::table('city_linkage')->where('id','=',$id)->delete();
 	}
 	
 
 	/**
 	 * 获取数据键值对数组
 	 */
-	public function getKeyName($p_id){
-		$list = DB::table('city_linkage')->select(['id','name'])->where('parent_id','>=',0)->get();
-		$key_to_name = [];
-		foreach ($list as $key => $value) {
-			$key_to_name[$value->id] = $value->name;
-		}
-		return $key_to_name;
+	public function getKeyName(){
+		$list = DB::table('city_linkage')->select(['id','name'])->where('parent_id','>=',0)->get()->toArray();
+		return array_column($list,'name','id');
 	}
 
 	
